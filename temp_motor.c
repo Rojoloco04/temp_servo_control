@@ -7,13 +7,13 @@ int main(void)
 	unsigned char input;
 	
 	// initialization
-    DDRA = 0x00; // PA0 as input (sensor)
-    DDRB = 0x08; // PB3 as output (motor)
+	DDRA = 0x00; // PA0 as input (sensor)
+	DDRB = 0x08; // PB3 as output (motor)
 	DDRD = 0xFF; // PORTD as output (LEDs)
 	
 	// PWM
-    OCR0 = 9; // initial value of OCR0
-    TCCR0 = 0x6C; // non-inverting mode, prescaler /256 (for 4MHz MCU)
+	OCR0 = 9; // initial value of OCR0
+	TCCR0 = 0x6C; // non-inverting mode, prescaler /256 (for 4MHz MCU)
 	
 	// ADC
 	ADMUX = 0xE0; // 2.56V Vref, single-ended, left-justified
@@ -21,7 +21,7 @@ int main(void)
 	SFIOR = SFIOR & 0x1F; // free running mode
 	
 	// looping segment
-	 while(1){
+	while(1){
 		ADCSRA |= (1<<ADSC); // start conversion
 		while((ADCSRA&(1<<ADIF))==0); // wait for end of conversion
 		input = ADCH; // input is the ADC result for temperature
