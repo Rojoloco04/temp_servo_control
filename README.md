@@ -2,6 +2,4 @@ Author: Jackson Parrack
 
 Contact: parrackjack@gmail.com
 
-This repository includes programs designed in the course ECE 3225, Microprocessors.
-
-This course is primarily in AVR Assembly, and focused on microprocessor functionality, including registers, the stack, instruction sets, and more.
+The goal of this project was to write programs in both C and AVR assembly to interface with an AVR microcontroller. The MCU was designed to take an input from a temperature sensor and use the ADC subsystem to generate PWM signals and rotate a servo motor.
